@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CloudExam | Online Examination System</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="#"><span class="brand-icon">CE</span><span>Cloud<span class="brand-accent">Exam</span><small>ONLINE EXAMINATION PORTAL</small></span></a>
+    <nav><a class="active" href="#dashboard">Dashboard</a><a href="#exams">Exams</a><a href="#results">Results</a></nav>
+    <div class="profile"><span class="avatar">DR</span><span><strong>Divya Ravi</strong><small>Student account</small></span></div>
+  </header>
+
+  <main class="page" id="dashboard">
+    <section class="welcome">
+      <div>
+        <p class="eyebrow">STUDENT DASHBOARD</p>
+        <h1>Good morning, Divya <span aria-hidden="true">👋</span></h1>
+        <p class="muted">Ready to learn something new? Check your exams and track your progress.</p>
+      </div>
+      <div class="date-chip"><span class="date-dot"></span><span id="todayDate">Today</span></div>
+    </section>
+
+    <section class="stats" aria-label="Exam statistics">
+      <article class="stat-card"><div class="stat-top"><span class="stat-label">Available exams</span><span class="stat-icon purple">▤</span></div><strong id="availableCount">3</strong><p>Ready to take</p></article>
+      <article class="stat-card"><div class="stat-top"><span class="stat-label">Completed</span><span class="stat-icon green">✓</span></div><strong id="completedCount">2</strong><p>Exams submitted</p></article>
+      <article class="stat-card"><div class="stat-top"><span class="stat-label">Average score</span><span class="stat-icon orange">↗</span></div><strong id="averageScore">84%</strong><p>Across completed exams</p></article>
+      <article class="stat-card"><div class="stat-top"><span class="stat-label">Certificates</span><span class="stat-icon blue">☆</span></div><strong id="certificateCount">1</strong><p>Achievements unlocked</p></article>
+    </section>
+
+    <section class="content-grid">
+      <div class="main-column">
+        <section class="panel" id="exams">
+          <div class="section-heading"><div><p class="eyebrow">YOUR LEARNING</p><h2>Available examinations</h2></div><span class="pill">Upcoming & open</span></div>
+          <div class="exam-list" id="examList">
+            <article class="exam-card">
+              <div class="subject-icon subject-purple">JS</div><div class="exam-info"><h3>JavaScript Fundamentals</h3><p>Web Development <span>•</span> 20 questions</p><div class="meta"><span>◷ 30 minutes</span><span>◎ 100 points</span></div></div><button class="btn btn-primary" data-exam="JavaScript Fundamentals">Start exam <span>→</span></button>
+            </article>
+            <article class="exam-card">
+              <div class="subject-icon subject-blue">DB</div><div class="exam-info"><h3>Database Management</h3><p>Computer Science <span>•</span> 15 questions</p><div class="meta"><span>◷ 25 minutes</span><span>◎ 75 points</span></div></div><button class="btn btn-primary" data-exam="Database Management">Start exam <span>→</span></button>
+            </article>
+            <article class="exam-card">
+              <div class="subject-icon subject-orange">CL</div><div class="exam-info"><h3>Cloud Computing Basics</h3><p>Cloud Technology <span>•</span> 10 questions</p><div class="meta"><span>◷ 20 minutes</span><span>◎ 50 points</span></div></div><button class="btn btn-primary" data-exam="Cloud Computing Basics">Start exam <span>→</span></button>
+            </article>
+          </div>
+        </section>
+
+        <section class="panel results-panel" id="results">
+          <div class="section-heading"><div><p class="eyebrow">PERFORMANCE</p><h2>Recent results</h2></div><span class="pill pill-green">Updated just now</span></div>
+          <div class="table-wrap"><table><thead><tr><th>EXAM NAME</th><th>DATE</th><th>SCORE</th><th>STATUS</th></tr></thead><tbody id="resultsBody">
+            <tr><td><span class="table-subject purple-dot"></span> HTML & CSS Basics</td><td>08 Oct 2026</td><td><strong>88/100</strong></td><td><span class="status status-pass">Passed</span></td></tr>
+            <tr><td><span class="table-subject blue-dot"></span> Introduction to Python</td><td>04 Oct 2026</td><td><strong>80/100</strong></td><td><span class="status status-pass">Passed</span></td></tr>
+          </tbody></table></div>
+        </section>
+      </div>
+
+      <aside class="side-column">
+        <section class="panel progress-panel"><div class="section-heading"><div><p class="eyebrow">YOUR PROGRESS</p><h2>Learning goal</h2></div><span class="target-icon">◎</span></div><div class="progress-number"><strong>7</strong><span>/ 10 exams</span></div><div class="progress-track"><span style="width:70%"></span></div><p class="muted small">Complete 3 more exams to reach your monthly goal.</p><div class="goal-footer"><span>Monthly target</span><strong>70%</strong></div></section>
+        <section class="tip-card"><div class="tip-symbol">✦</div><p class="eyebrow">QUICK TIP</p><h3>Prepare for success</h3><p>Find a quiet place, check your internet connection, and read every question carefully before submitting.</p><a href="#exams">View your exams <span>→</span></a></section>
+        <section class="panel help-panel"><div class="help-icon">?</div><div><h3>Need help?</h3><p>Having trouble with an exam?</p><a href="mailto:support@example.com">Contact support</a></div></section>
+      </aside>
+    </section>
+    <footer>© 2026 CloudExam. Learning made simple. <span>Secure • Simple • Accessible</span></footer>
+  </main>
+
+  <dialog id="examDialog" class="exam-dialog">
+    <form method="dialog" class="dialog-top"><div><p class="eyebrow">PRACTICE EXAM</p><h2 id="dialogTitle">Exam</h2></div><button class="close-btn" aria-label="Close dialog">×</button></form>
+    <div id="examContent"></div>
+  </dialog>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <script src="script.js"></script>
+</body>
+</html>
